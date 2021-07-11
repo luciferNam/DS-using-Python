@@ -1,0 +1,31 @@
+#create a Node 
+class Node:
+	def __init__(self, data): 	#acts as a constructor
+		self.data = data	 #initializing the data node
+		self.next = None 		#initializing the address node
+		
+#creating a singly Linked list
+class LinkedList:
+	def __init__(self):
+		self.head = None 	#initializing the first node i.e, head node
+		
+	def printList(self):	#function to print the list
+		tmp = self.head
+		while(tmp):
+			print(tmp.data)	#printing the data in the node
+			tmp = tmp.next		#pointing tmp to the next node
+
+#the execution starts from here
+if __name__ == '__main__':		#acts as a boilerplate, prevents user from accessing the script by mistake
+	lst = LinkedList()		#an empty list
+	lst.head = Node(1)		#head pointing to the first node
+	second = Node(2)
+	third = Node(3)
+	
+	#pointing the address of one node to the next node
+	lst.head.next = second
+	second.next = third 		
+	#since third is the last node, it is already initilized as None
+	
+	#printing the list
+	lst.printList()
